@@ -5,3 +5,11 @@
 .container {
   @apply max-w-screen-xl px-4;
 }
+
+.input_text__label {
+  @apply block w-full;
+}
+
+input[type='text'] {
+  @apply block h-[50px] w-full px-4 text-black font-sans;
+}
