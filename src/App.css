@@ -1,9 +1,59 @@
 .App {
-  @apply flex flex-col h-screen justify-between;
+  @apply flex flex-col h-screen justify-between min-h-[100vh] bg-neutral-50;
+}
+
+header {
+  @apply text-center bg-indigo-100 py-8;
+}
+
+header h1 {
+  @apply text-6xl font-bold text-indigo-900 font-mono;
+}
+
+#main {
+  @apply flex-auto flex justify-center items-center;
+}
+
+.content {
+  @apply w-full max-w-screen-sm bg-indigo-100 p-8 rounded shadow-md;
+}
+
+
+footer {
+  @apply bg-zinc-900 text-white py-4 text-sm text-center font-mono;
 }
 
 .container {
   @apply max-w-screen-xl px-4;
+}
+
+.content__form {
+  @apply relative mb-8 last:mb-0;
+}
+
+.content__form button,
+.task_list li button {
+  @apply absolute top-0 right-0 mt-3 mr-3 text-2xl text-indigo-950 hover:text-indigo-500 transition-colors duration-300 ease-in-out;
+}
+
+.checkbox_wrapper {
+  @apply absolute top-0 left-0 mt-[15px] ml-3
+}
+
+input[type='checkbox'] {
+  @apply absolute top-0 left-0 opacity-0 h-[1px] w-[1px] pointer-events-none;
+}
+
+input[type='checkbox'] + span {
+  @apply flex justify-center items-center h-5 w-5 rounded border-2 border-indigo-500 transition-colors duration-300 ease-in-out cursor-pointer;
+}
+
+input[type='checkbox']+span svg {
+  @apply hidden text-sm text-indigo-500;
+}
+
+input[type='checkbox']:checked + span svg {
+  @apply block;
 }
 
 .input_text__label {
@@ -11,5 +61,17 @@
 }
 
 input[type='text'] {
-  @apply block h-[50px] w-full px-4 text-black font-sans;
+  @apply block h-[50px] w-full px-10 text-black font-sans rounded bg-white border-[1px] border-black;
+}
+
+input[type='text']:disabled {
+  @apply bg-white/75 line-through;
+}
+
+.task_list li {
+  @apply relative mb-4 last:mb-0;
+}
+
+.task_list li.completed button {
+  @apply hidden;
 }

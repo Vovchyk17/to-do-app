@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App min-h-[100vh] bg-neutral-50">
+    <div className="App">
       <Header />
       <Main />
       <Footer />
