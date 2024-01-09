@@ -71,7 +71,3 @@ input[type='text']:disabled {
 .task_list li {
   @apply relative mb-4 last:mb-0;
 }
-
-.task_list li.completed button {
-  @apply hidden;
-}
