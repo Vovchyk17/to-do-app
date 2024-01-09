@@ -4,12 +4,18 @@ import ToDoList from "./ToDoList";
 import ToDoFilter from "./ToDoFilter";
 
 export default function Main() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    return JSON.parse(localStorage.getItem("tasks")) || [];
+  });
   const [allChecked, setAllChecked] = useState(false);
   const [currentFilter, setCurrentFilter] = useState("All");
   const [filteredTasks, setFilteredTasks] = useState([]);
   const [activeCount, setActiveCount] = useState(0);
   const [completedCount, setCompletedCount] = useState(0);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   function handleSubmitForm(e) {
     e.preventDefault();

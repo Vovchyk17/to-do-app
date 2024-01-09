@@ -73,11 +73,11 @@ input[type='text']:disabled {
 }
 
 .filter_list {
-  @apply flex justify-start items-center gap-4 mb-8;
+  @apply flex justify-start items-center flex-wrap gap-4 mb-8;
 }
 
 .filter_list button{
-  @apply relative rounded-full text-white capitalize py-2 px-6 bg-indigo-800 hover:opacity-90;
+  @apply relative rounded-full text-sm text-white capitalize py-2 px-6 bg-indigo-800 hover:opacity-90;
 }
 
 .filter_list button.active {
