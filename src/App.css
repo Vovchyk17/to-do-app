@@ -71,3 +71,23 @@ input[type='text']:disabled {
 .task_list li {
   @apply relative mb-4 last:mb-0;
 }
+
+.filter_list {
+  @apply flex justify-start items-center gap-4 mb-8;
+}
+
+.filter_list button{
+  @apply relative rounded-full text-white capitalize py-2 px-6 bg-indigo-800 hover:opacity-90;
+}
+
+.filter_list button.active {
+  @apply bg-indigo-500;
+}
+
+.content_bottom {
+  @apply flex justify-between items-center mt-8;
+}
+
+.content_bottom button {
+  @apply relative border-2 border-indigo-800 text-sm text-indigo-800 capitalize py-2 px-4 bg-transparent hover:bg-indigo-800 hover:text-white transition-colors duration-300 ease-in-out;
+}
